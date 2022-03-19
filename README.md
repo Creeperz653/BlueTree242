@@ -1,3 +1,5 @@
+[![Discord Presence](https://lanyard.cnrad.dev/api/831970480499589220)](https://discord.com/users/831970480499589220)
+
 ### Hi there 👋
 
 - 🔭 I’m currently working on DiscordSRVUtils and AdvancedPlHide
