@@ -1,0 +1,15 @@
+.header-container {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    background: rgb(0,39,226);
+    background: -moz-linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0027e2",endColorstr="#008bff",GradientType=1);
+}
+.header-container h1 {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}

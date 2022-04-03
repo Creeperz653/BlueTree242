@@ -1,0 +1,14 @@
+.about {
+    width: 100%;
+}
+@media only screen and (min-width: 1280px){
+    .about{
+        width: 50%;
+    }
+}
+.about h1{
+    text-align: center;
+}
+.about p {
+    text-align: center;
+}
