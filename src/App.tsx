@@ -1,5 +1,5 @@
-import Header from "./components/header"
-import About from './components/about'
+import Header from "./components/header/header"
+import About from './components/about/about'
 import {Route, Switch, useLocation} from 'wouter';
 import {useState} from "react";
 import Index from "./pages";

@@ -1,5 +1,7 @@
 .about {
     width: 100%;
+    display: inline-block;
+    vertical-align: top;
 }
 @media only screen and (min-width: 1280px){
     .about{
