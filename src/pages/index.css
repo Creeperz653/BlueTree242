@@ -18,5 +18,5 @@ a:hover {
 }
 
 body {
-    transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s, --bs-body-color .2s;
 }

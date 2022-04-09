@@ -1,7 +1,7 @@
 import './header.css'
 import {useEffect, useState} from "react";
 export default function header() {
-    const [pulled, setPulled] = useLocalStorage<boolean>("theme", false)
+    const [pulled, setPulled] = useLocalStorage<boolean>("dark-theme", false)
     function toggle() {
         setPulled(!pulled)
     }
