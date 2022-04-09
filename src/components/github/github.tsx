@@ -19,7 +19,7 @@ export default function GithubActivity() {
             if (!content) return null; //not found
             return <div>
 				<span>
-					<strong>{moment(a.created_at).fromNow()}</strong>, I <b>{content.title}</b> {content.suffix} <a href={`https://github.com/${a.repo.name}`}>{a.repo.name}</a>
+					{moment(a.created_at).fromNow()}, I <b>{content.title}</b> {content.suffix} <a href={`https://github.com/${a.repo.name}`}>{a.repo.name}</a>
 					</span>
                 <p>{content.body}</p>
             </div>
