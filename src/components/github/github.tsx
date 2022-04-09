@@ -12,7 +12,7 @@ export default function GithubActivity() {
     return (
         <div className={"github-activity"}>
         <h3>Activity on <a href="https://github.com/BlueTree242">GitHub</a>:</h3>
-    {activity == null ? error ? <p><strong>Failed to load! Maybe check my <a href="https://github.com/BlueTree242">GitHub</a> manually</strong></p>
+    {activity == null ? error ? <p><strong>Github is weird today, not giving us information, but you can check it <a href="https://github.com/BlueTree242">here</a></strong></p>
         : <p><strong>Loading...</strong></p> :
         activity.map(a => {
             const content = titles[a.type]?.(a); //get the activity html for the activity
@@ -69,7 +69,7 @@ export const titles: {[k: string]: ActivityHtml} = {
         title: 'pushed',
         suffix: 'to',
         body: x.payload.commits.map((c: Commit) => <span key={c.sha}>
-					<a href={commitUrl(x, c)}><code>
+					<a href={commitUrl(x, c)} target={"_blank"}><code>
 						{c.sha.slice(0, 7)}</code></a>: {c.message}
 				</span>)
     }),

@@ -2,14 +2,26 @@
     height: 5rem;
     display: flex;
     justify-content: center;
-    background: rgb(0,39,226);
-    background: -moz-linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
     background: linear-gradient(90deg, rgba(0,39,226,1) 20%, rgba(0,139,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0027e2",endColorstr="#008bff",GradientType=1);
 }
 .header-container h1 {
     width: 100%;
     text-align: center;
     margin: auto;
+}
+
+.lightswitch {
+    fill: none;
+    stroke: var(--bs-body-color);
+    width: 20px;
+    right: 1em;
+    position: absolute;
+    cursor: pointer;
+    top: -20px;
+    transition: top .5s cubic-bezier(1,-.75,.4,1);
+}
+
+.lightswitch.pulled {
+    top: -5px;
+    transition: top .5s cubic-bezier(.4, 0, 0, 1.75);
 }

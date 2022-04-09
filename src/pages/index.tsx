@@ -5,7 +5,7 @@ export default function Index() {
     return (
         <div className={"info-container"}>
         <About />
-            <GithubActivity />
+        <GithubActivity />
         </div>
     )
 }

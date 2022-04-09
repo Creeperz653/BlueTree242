@@ -10,3 +10,13 @@ a:hover {
     color: var(--bs-body-color);
     cursor:pointer;
 }
+
+.theme-dark{
+    --bs-body-color:white;
+    color: white;
+    background-color: #1d1f21;
+}
+
+body {
+    transition: background-color .2s, color .2s;
+}
