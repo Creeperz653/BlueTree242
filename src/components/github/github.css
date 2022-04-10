@@ -3,6 +3,8 @@
     margin-left: 0;
     display: inline-block;
     vertical-align: top;
+    max-height: 50vh;
+    overflow: auto;
 }
 .github-activity h3 {
     text-align: center;
