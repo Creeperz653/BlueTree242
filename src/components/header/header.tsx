@@ -12,8 +12,7 @@ export default function header() {
         <div className={"header-container"}>
             <h1 style={{color:"white"}}>BlueTree242</h1>
             <svg onClick={toggle} className={`lightswitch ${pulled ? 'pulled' : ''}`}>
-                <path d="M 10 0 V 40" />
-                <path d="M 5 40 h 10 l 2 20 h -14 l 2 -20" />
+                <path d="M10 0v40m-5 0h10l2 20H3l2-20"/>
             </svg>
         </div>
     )
