@@ -1,22 +1,22 @@
 .info-container {
-    padding: 1.3rem;
+  padding: 1.3rem;
 }
 
 a {
-    color: var(--bs-body-color);
+  color: var(--bs-body-color);
 }
 
 a:hover {
-    color: var(--bs-body-color);
-    cursor:pointer;
+  color: var(--bs-body-color);
+  cursor: pointer;
 }
 
-.theme-dark{
-    --bs-body-color:white;
-    color: white;
-    background-color: #1d1f21;
+.theme-dark {
+  --bs-body-color: white;
+  color: white;
+  background-color: #1d1f21;
 }
 
 body {
-    transition: background-color .2s, color .2s, --bs-body-color .2s;
+  transition: background-color 0.2s, color 0.2s, --bs-body-color 0.2s;
 }

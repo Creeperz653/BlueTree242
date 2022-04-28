@@ -1,32 +1,32 @@
 .github-activity {
-    width: 100%;
-    margin-left: 0;
-    display: inline-block;
-    vertical-align: top;
-    max-height: 50vh;
-    overflow: auto;
+  width: 100%;
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: top;
+  max-height: 50vh;
+  overflow: auto;
 }
 .github-activity h3 {
-    text-align: center;
+  text-align: center;
 }
-@media only screen and (min-width: 1280px){
-    .github-activity{
-        width: 45%;
-        margin-left: 1rem;
-    }
-    .github-activity h3 {
-        text-align: unset;
-    }
+@media only screen and (min-width: 1280px) {
+  .github-activity {
+    width: 45%;
+    margin-left: 1rem;
+  }
+  .github-activity h3 {
+    text-align: unset;
+  }
 }
 
 .github-activity code {
-    font-size: .9em;
+  font-size: 0.9em;
 }
 
 .github-activity span {
-    display: block;
+  display: block;
 }
 
 .github-activity-title {
-    font-size: 1.05em;
+  font-size: 1.05em;
 }
