@@ -64,6 +64,7 @@ async function fetchActivity(): Promise<Activity[]> {
     );
     return (await activityReq.json())
       .filter((a: Activity) => events.includes(a.type)) //make sure the event is actually supported
+      .slice(0, 5)
   })();
 }
 
