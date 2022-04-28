@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "./github.css";
-
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCodeCommit, faCodeMerge, faCodePullRequest, faComment, faStar,  } from "@fortawesome/free-solid-svg-icons";
+import { faGitAlt } from "@fortawesome/free-brands-svg-icons";
 export default function GithubActivity() {
   const [activity, setActivity] = useState<Activity[] | null>(null);
   const [error, setError] = useState<Boolean>(false);
@@ -39,6 +42,7 @@ export default function GithubActivity() {
           return (
             <div>
               <span>
+                <FontAwesomeIcon icon={content.icon ? content.icon : faGitAlt} />{" "}
                 {moment(a.created_at).fromNow()}, I <b>{content.title}</b>{" "}
                 {content.suffix}{" "}
                 <a href={`https://github.com/${a.repo.name}`}>{a.repo.name}</a>
@@ -60,7 +64,6 @@ async function fetchActivity(): Promise<Activity[]> {
     );
     return (await activityReq.json())
       .filter((a: Activity) => events.includes(a.type)) //make sure the event is actually supported
-      .slice(0, 5); //5 max json objects to use
   })();
 }
 
@@ -87,6 +90,7 @@ type ActivityHtml = (activity: Activity) => {
   title: string;
   suffix: string;
   body: React.ReactNode;
+  icon?: IconProp;
 } | null;
 
 interface Commit {
@@ -98,6 +102,7 @@ export const titles: { [k: string]: ActivityHtml } = {
   PushEvent: (x) => ({
     title: "pushed",
     suffix: "to",
+    icon: faCodeCommit,
     body: x.payload.commits.map((c: Commit) => (
       <span key={c.sha}>
         <a href={commitUrl(x, c)} target={"_blank"}>
@@ -125,6 +130,10 @@ export const titles: { [k: string]: ActivityHtml } = {
               : activity.payload.action
           } a pull request`,
           suffix: "in",
+          icon: 
+              activity.payload.action === "closed" &&
+              activity.payload.pull_request.merged ? faCodeMerge : faCodePullRequest
+          ,
           body: (
             <span>
               <a href={pullRequestUrl(activity)}>
@@ -138,6 +147,7 @@ export const titles: { [k: string]: ActivityHtml } = {
   PullRequestReviewEvent: (activity) => ({
     ...titles["PullRequestEvent"](activity)!,
     title: "reviewed a pull request",
+    icon: faStar
   }),
   IssuesEvent: (activity) => ({
     title: `${activity.payload.action} an issue`,
@@ -160,6 +170,7 @@ export const titles: { [k: string]: ActivityHtml } = {
       ? {
           ...titles["IssuesEvent"](activity)!,
           title: "commented on an issue",
+          icon: faComment
         }
       : null,
 };
